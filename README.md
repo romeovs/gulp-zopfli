@@ -4,13 +4,32 @@ gulp-zopfli
 a [Zopfli](http://en.wikipedia.org/wiki/Zopfli) plugin for [gulp](https://github.com/wearefractal/gulp),
 based on [node-zopfli](https://npmjs.org/package/node-zopfli).
 
-#Install
+## Install
 
 ```
 npm install --save-dev gulp-zopfli
 ```
 
-#Examples
+## Options
+
+You can pass an options array to the zopfli object. These options are
+passed on to `node-zopfli` library, except for one: the `format` options is 
+used to pick a compression format. The possible formats are: `"deflate"`, `"zlib"` or `"gzip"`.
+
+The defaults options are:
+```javascript
+{
+    format: "gzip",
+    verbose: false,
+    verbose_more: false,
+    numiterations: 15,
+    blocksplitting: true,
+    blocksplittinglast: false,
+    blocksplittingmax: 15
+};
+```
+
+## Examples
 
 ```javascript
 var gulp = require("gulp");
@@ -38,25 +57,6 @@ by
 var gzip = require("gulp-zopfli");
 ```
 
-Options
-=======
-
-You can pass an options array to the zopfli object. These options are
-passed on to `node-zopfli` library, except for one: the `format` options is 
-used to pick a compression format. The possible formats are: `"deflate"`, `"zlib"` or `"gzip"`.
-
-The defaults options are:
-```javascript
-{
-    format: "gzip",
-    verbose: false,
-    verbose_more: false,
-    numiterations: 15,
-    blocksplitting: true,
-    blocksplittinglast: false,
-    blocksplittingmax: 15
-};
-```
 
 Credit
 ======
