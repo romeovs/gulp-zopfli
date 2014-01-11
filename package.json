@@ -1,0 +1,44 @@
+{
+  "name": "gulp-zopfli",
+  "version": "0.0.1",
+  "description": "Zopfli compressor for gulp",
+  "keywords": [
+    "gulpplugin",
+    "zopflie",
+    "compress",
+    "deflate",
+    "gzip",
+    "gulp"
+  ],
+  "homepage": "https://github.com/jstuckey/gulp-gzip/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romeo/gulp-zopfli.git"
+  },
+  "author": {
+    "name": "Romeo Van Snick",
+    "email": "romeovs@gmail.com"
+  },
+  "dependencies": {
+    "event-stream": "~3.0.16",
+    "clone": "~0.1.11",
+    "node-zopfli": "~1.0.3"
+  },
+  "devDependencies": {
+    "gulp": "~3.2.0",
+    "mocha": "~1.13.0",
+    "should": "~2.0.2"
+  },
+  "main": "index.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/jstuckey/gulp-gzip/raw/master/LICENSE"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/romeovs/gulp-zopfli/issues",
+    "email": "romeovs@gmail.com"
+  }
+}
