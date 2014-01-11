@@ -7,7 +7,7 @@ based on [node-zopfli](https://npmjs.org/package/node-zopfli).
 #Install
 
 ```
-npm install --save-dev gulp-gzip
+npm install --save-dev gulp-zopfli
 ```
 
 #Examples
