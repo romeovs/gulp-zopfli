@@ -7,12 +7,22 @@ var zopfli = require('node-zopfli');
 
 const PLUGIN_NAME = 'gulp-zopfli';
 
+/**
+ *
+ * @param {Object} opts
+ * @param {String} opts.format gzip || deflate || zlib
+ * @param {Number} opts.thresholdRatio if compression ratio does not reach the threshold,
+ * does not compress, default to 0
+ * @param {String} opts.thresholdBehavior if compression ratio does not reach the threshold,
+ * "original" to output original file, or
+ * "blank" (default) to output nothing
+ * @returns {Stream}
+ */
 module.exports = function(opts) {
   'use strict';
-
-  var format = (
-                 opts !== undefined
-                 ) ? opts.format : 'gzip';
+  // default options
+  var options = opts || {};
+  var format = options.format || 'gzip';
 
   var ext;
 
@@ -23,9 +33,6 @@ module.exports = function(opts) {
   } else if(format === 'zlib') {
     ext = '.zz';
   }
-
-  // default options
-  var options = opts || {};
 
   // delete format option
   if(options.format !== null) {
@@ -50,11 +57,19 @@ module.exports = function(opts) {
       // File contents is a buffer
       var zcb = function(err, buffer) {
         if(!err) {
+          if(options.thresholdRatio > file.contents.length / buffer.length) {
+            if(options.thresholdBehavior === 'original'){
+              // output original file
+              return callback(null, file);
+            }
+            // output nothing
+            return callback();
+          }
           newFile.contents = buffer;
-          callback(null, newFile);
-        } else {
-          callback(err, null);
+          // output compressed file
+          return callback(null, newFile);
         }
+        callback(err, null);
       };
 
       if(format === 'gzip') {
