@@ -1,6 +1,6 @@
 {
   "name": "gulp-zopfli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Zopfli compressor for gulp",
   "keywords": [
     "gulpplugin",
@@ -19,13 +19,21 @@
     "name": "Romeo Van Snick",
     "email": "romeovs@gmail.com"
   },
+  "scripts": {
+    "test": "cd test && mocha -R spec"
+  },
+  "contributors": [
+    "TruongSinh Tran-Nguyen <i@truongsinh.pro>",
+    "Jeremy Stuckey <jeremystuckey@gmail.com>"
+  ],
   "dependencies": {
     "event-stream": "~3.0.16",
     "clone": "~0.1.11",
     "node-zopfli": "~1.0.3"
   },
   "devDependencies": {
-    "gulp": "~3.2.0",
+    "gulp": "~3.4.x",
+    "q": "~1.0.0",
     "mocha": "~1.13.0",
     "should": "~2.0.2"
   },
