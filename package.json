@@ -19,6 +19,12 @@
     "name": "Romeo Van Snick",
     "email": "romeovs@gmail.com"
   },
+  "scripts": {
+    "test": "cd test && mocha -R spec"
+  },
+  "contributors": [
+    "TruongSinh Tran-Nguyen <i@truongsinh.pro>"
+  ],
   "dependencies": {
     "event-stream": "~3.0.16",
     "clone": "~0.1.11",
