@@ -10,7 +10,7 @@
     "gzip",
     "gulp"
   ],
-  "homepage": "https://github.com/jstuckey/gulp-gzip/",
+  "homepage": "https://github.com/romeovs/gulp-zopfli",
   "repository": {
     "type": "git",
     "url": "https://github.com/romeo/gulp-zopfli.git"
